@@ -27,9 +27,9 @@
          border: 1px solid navy;
          width: 280px;
          margin: 6px auto;
-         padding:8px 12px;
-         text-align:left;
-         border-radius:6px;
+         padding: 8px 12px;
+         text-align: left;
+         border-radius: 6px;
 
       }
    </style>
@@ -48,5 +48,66 @@
    <div> Bonus level: <span id="bonus"></span></div>
    <div> Team name: <span id="team"></span></div>
 </body>
+<script>
+   function showprofile() {
+      //variables
+      let name = "Alex";
+      let myScore = 75;
+      let highScore = 100;
+      let bonus = null;
+      let team;
+
+      //comparison operator
+      let isTopScore = myScore == highScore;
+
+      //var
+
+      let rank;
+      if (myScore >= 80) {
+         rank = "Gold";
+
+      } else if (myScore >= 50) {
+         rank = "Silver";
+
+      } else {
+         rank = "Bronze";
+      }
+
+
+      let hour = new Date().getHours();
+
+      let greeting;
+      if (hour < 12) {
+         greeting = "Good Morning!";
+      } else if (hour < 17) {
+         greeting = "Good Afternoon!";
+      } else {
+         greeting = "Good Night";
+      }
+      //while star
+
+      let stars = "";
+      let count = 0;
+
+      while (count < 5) {
+         stars = stars + "*";
+         count = count + 1;
+
+      }
+
+      document.getElementById("name").innerHTML = name;
+      document.getElementById("score").innerHTML = myScore + "out of" + highScore;
+      document.getElementById("record").innerHTML = isTopScore;
+      document.getElementById("greeting").innerHTML = greeting;
+      document.getElementById("stars").innerHTML = stars;
+      document.getElementById("bonus").innerHTML = bonus;
+      document.getElementById("team").innerHTML = team;
+      document.getElementById("rank").innerHTML = rank;
+
+
+
+
+   }
+</script>
 
 </html>
